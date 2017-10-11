@@ -12,9 +12,11 @@ Under Ubuntu, it is in a package called `python-setuptools`.'''
     sys.exit(1)
 
 from setuptools import setup, find_packages
-execfile('pymorph/pymorph_version.py')
+from distutils.core import setup
 
-long_description = file('README.rst').read()
+exec(open('pymorph/pymorph_version.py').read())
+
+long_description = open('README.rst').read()
 
 classifiers = [
     'Development Status :: 5 - Production/Stable',
